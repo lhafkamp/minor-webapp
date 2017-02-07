@@ -9,7 +9,6 @@
 *   Copyleft 2012, all wrongs reversed.
 */
 
-
 // module
 var locationModule = (() => {
 
@@ -96,9 +95,6 @@ var locationModule = (() => {
     }
 
     var map = () => {
-        function derp(e) {
-            console.log(e);
-        }
         // GOOGLE MAPS FUNCTIES
         /**
          * generate_map(myOptions, canvasId)
