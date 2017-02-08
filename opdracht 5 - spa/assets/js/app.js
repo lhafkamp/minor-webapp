@@ -2,19 +2,23 @@
 
 const greatSuccesModel = (() => {
 	const derp = 'hi';
-	console.log(derp);
 
-	return {
-		app() {
-			
-		},
-
-		routes() {
-			
-		},
-
-		sections() {
-			
+	const app = {
+		init() {
+			console.log(derp);
 		},
 	}
+
+	const routes = {
+		init() {
+
+		},
+	}
+
+	const sections = {
+		init() {
+
+		},
+	}
+	app.init();
 })();
