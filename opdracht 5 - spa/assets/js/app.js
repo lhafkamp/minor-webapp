@@ -1,24 +1,28 @@
 'use strict';
 
 const greatSuccesModel = (() => {
-	const derp = 'hi';
+
+	const location = window.location;
+	let oldHash = location.hash;
+	const newHash = oldHash;
 
 	const app = {
 		init() {
-			console.log(derp);
+			routes.init();
 		},
 	}
 
 	const routes = {
 		init() {
-
+			window.addEventListener('hashchange', sections.toggle());
 		},
 	}
 
 	const sections = {
-		init() {
-
+		toggle(route) {
+			oldHash = newHash;
 		},
 	}
 	app.init();
 })();
+

@@ -4,3 +4,7 @@ section {
 	width: 10em;
 	margin: 1em;
 }
+
+.hide {
+	display: none;
+}
