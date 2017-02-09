@@ -19,13 +19,9 @@
 
 	const sections = {
 		toggle(route) {
-			options.forEach(option => {
-				if (route === `#${option.id}`) { // if route (the current #) = equal to option.id (the current #) do:
-					option.classList.remove('hide');
-				} else {
-					option.classList.add('hide');
-				}
-			});
+			// if route (the current #) = equal to option.id (the current #) do:
+			options.forEach(option => route === `#${option.id}` ? // ternary operator on 2 lines for readability
+			option.classList.remove('hide') : option.classList.add('hide'));  // -------------------------------
 		},
 	};
 	app.init();
