@@ -22,6 +22,7 @@ const greatSuccesModel = (() => {
 	const sections = {
 		toggle(route) {
 			console.log(route);
+
 			if (route.includes('home')) { // if route (route = the current #) has the string home do:
 				home.classList.remove('hide');
 				best.classList.add('hide');
