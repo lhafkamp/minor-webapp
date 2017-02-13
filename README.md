@@ -49,14 +49,14 @@ SPA pro's and cons
 
 # assignment 4
 Github:
-https://github.com/lhafkamp/minor-webapp/blob/master/opdracht%204%20-%20geo/cmdgeo.js
+https://github.com/lhafkamp/minor-webapp/week%201/blob/master/opdracht%204%20-%20geo/cmdgeo.js
 
 # assignment 5
 Github:
-https://github.com/lhafkamp/minor-webapp/tree/master/opdracht%205%20-%20spa
+https://github.com/lhafkamp/minor-webapp/week%201/tree/master/opdracht%205%20-%20spa
 
 Github pages:
-https://lhafkamp.github.io/minor-webapp/opdracht%205%20-%20spa/index.html
+https://lhafkamp.github.io/minor-webapp/week%201/opdracht%205%20-%20spa/index.html#home
 
 # assignment 6
 Posted issues at Nick & Cyd
