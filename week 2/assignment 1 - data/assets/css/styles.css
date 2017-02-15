@@ -2,3 +2,17 @@
 	margin: 0;
 	padding: 0;
 }
+
+#app {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#app div {
+	background: #009999;
+	margin: .6em;
+	width: 10em;
+	height: 10em;
+	color: white;
+}
