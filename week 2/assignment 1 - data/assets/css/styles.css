@@ -1,18 +1,26 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
-#app {
+main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-top: 2em;
 }
 
-#app div {
-	background: #009999;
-	margin: .6em;
-	width: 10em;
-	height: 10em;
-	color: white;
+section div {
+	background: grey;
+	margin: 2em;
+}
+
+main div {
+	width: 15em;
+	height: 25em;
+	margin-right: .3em;
+	margin-bottom: 2em;
+}
+
+main div img {
+	width: 15em;
+}
+
+section {
+	display: none;
 }
