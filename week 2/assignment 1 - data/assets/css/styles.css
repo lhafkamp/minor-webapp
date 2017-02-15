@@ -6,8 +6,11 @@ main {
 }
 
 section div {
-	background: grey;
 	margin: 2em;
+}
+
+section div img {
+	width: 25em;
 }
 
 main div {

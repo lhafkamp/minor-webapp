@@ -2,11 +2,12 @@ const main = document.querySelector('main');
 const zoom = document.querySelector('section');
 const currentLocation = window.location;
 const userArray = []; // all the user objects
+currentLocation.hash = '#main';
 
 function mainDom(user) {
 	return `
 		<div>
-			<a href="#zoom/${user.login}">
+			<a href="#${user.login}">
 				<img src="${user.avatar_url}"></img>
 				<h2>${user.name}</h2>
 				<p>${user.bio}</p>
@@ -18,8 +19,10 @@ function mainDom(user) {
 function zoomDom(user) {
 	return ` 
 		<div>
+			<img src="${user.avatar_url}"></img>
 			<h1>${user.name}</h1>
 		</div>
+		<a href="#main">Back</a>
 	`;
 }
 
@@ -31,31 +34,29 @@ function renderToZoom(elements) {
 	zoom.innerHTML = elements; // render ele's to HTML
 }
 
-function decideDom(data) {
-	if (currentLocation.hash === '#main') {
-		return mainDom(data);
-	} else {
-		return zoomDom(data);
-	}
-}
-
 function infoRender() {
 	const getUserInfo = userArray
-		.map(userInfo => decideDom(userInfo)) // get html ele's
+		.map(userInfo => mainDom(userInfo)) // get html ele's
 		.join('');
 
-	if (currentLocation.hash === '#main') {
-		renderToMain(getUserInfo);
-	} else {
-		renderToZoom(getUserInfo);
-	}
+	renderToMain(getUserInfo);
 }
 
-function fetchSingleUser(user) {
-	fetch(user)
+function zoomRender() {
+	const getUserInfo = userArray
+		.filter(userInfo => '#' + userInfo.login === currentLocation.hash)
+		.map(userInfo => zoomDom(userInfo))
+		.join('');
+
+	renderToZoom(getUserInfo);
+}
+
+function fetchSingleUser(data) {
+	fetch(data)
 		.then(data => data.json())
 		.then(data => userArray.push(data)) // push objects into userArray
-		.then(data => infoRender());
+		.then(data => infoRender())
+		.then(data => zoomRender());
 }
 
 function fetchData() {
@@ -99,27 +100,6 @@ function fetchData() {
 
 fetchData();
 
-
-// ----------------
-// routing
-// ----------------
-
-// set up routes
-currentLocation.hash = '#main';
-
-routie({
-    'home': function() {
-    	currentLocation.hash = '#main';
-    },
-    'zoom': function() {
-    	currentLocation.hash = '#zoom';
-    }
-});
-
-function goToZoom() {
-	routie('zoom');
-}
-
 function toggle() {
 	if (currentLocation.hash !== '#main') {
 		main.style.display = 'none';
@@ -130,6 +110,6 @@ function toggle() {
 	}
 }
 
-// main.addEventListener('click', goToZoom);
 window.addEventListener('hashchange', infoRender);
+window.addEventListener('hashchange', zoomRender);
 window.addEventListener('hashchange', toggle);
