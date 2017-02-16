@@ -1,7 +1,7 @@
 # minor-webapp
 Assignments for the course Web App from Scratch
 
-
+# Week 1
 # assignment 2
 To start this one off I'm gonna say jQuery vs vanilla Javascript does have some hard facts but when it comes down to it its something that depends on the project, your preferences and subjective overall.
 
@@ -61,4 +61,10 @@ https://lhafkamp.github.io/minor-webapp/week%201/opdracht%205%20-%20spa/index.ht
 # assignment 6
 Posted issues at Nick & Cyd
 
+# Week 2
+Github:
+https://github.com/lhafkamp/minor-webapp/tree/master/week%202/assignment%201%20-%20data
+
+Github pages:
+https://lhafkamp.github.io/minor-webapp/week%202/assignment%201%20-%20data/#main
 
