@@ -1,7 +1,7 @@
 body {
 	background: #d8d8d8;
 	margin: 0;
-	padding: 5em 2em 2em 2em;
+	padding: 5em 1.5em 2em 2.2em;
 }
 
 nav {
@@ -10,22 +10,25 @@ nav {
 	left: 0;
 	width: 100vw;
 	background: #24292e;
+	display: flex;
+	justify-content: center;
 }
 
 nav p {
-	margin-left: 3.5em;
 	color: white;
 	font-family: helvetica;
 	font-weight: 100;
 	font-size: .9em;
 	font-style: italic;
 	cursor: pointer;
-	width: 16em;
+	width: 18em;
 	padding: .5em;
 }
 
-span {
+nav span {
 	margin-right: .7em;
+	margin-left: .7em;
+
 	font-weight: 800;
 	font-size: 1.3em;
 }
@@ -50,7 +53,7 @@ main {
 }
 
 #all:hover {
-	border-top-right-radius: 5em;
+	border-top-right-radius: 4.2em;
 	text-decoration: underline;
 }
 
@@ -94,10 +97,14 @@ section {
 }
 section div {
 	margin: 2em;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 section div img {
-	width: 25em;
+	height: 25em;
+	margin-right: 2em;
+	margin-bottom: 2em;
 }
 
 main div img {
@@ -105,10 +112,25 @@ main div img {
 	height: 15em;
 }
 
-section a {
+section a,
+section p {
 	color: #24292e;
-	text-decoration: none;
 	font-size: 1em;
+	margin: 0 0 1.5em 0;
+}
+
+section h1 {
+	margin: 0 0 .5em 0;
+	font-size: 2em;
+}
+
+section a {
+	display: block;
+}
+
+section span {
+	font-weight: 800;
+	font-style: italic;
 }
 
 .back {
@@ -118,7 +140,8 @@ section a {
 	border: 2px solid #24292e;
 	background: 0;
 	padding: .8em 2em .8em 2em;
-	width: 7em;
+	width: 2.5em;
+	text-decoration: none;
 	border-radius: .3em;
 	cursor: pointer;
 }
@@ -127,4 +150,14 @@ section a {
 	background: #24292e;
 	color: white;
 	border-color: #24292e;
+}
+
+@media (max-width: 30em) {
+  	body {
+		padding: 5em 0em 2em 1.3em;
+  	}
+
+  	section div img {
+		height: 18em;
+	}
 }
