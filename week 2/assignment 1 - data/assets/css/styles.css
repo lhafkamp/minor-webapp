@@ -1,3 +1,35 @@
+body {
+	background: #d8d8d8;
+	margin: 0;
+	padding: 5em 2em 2em 2em;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background: #24292e;
+}
+
+nav p {
+	margin-left: 3.5em;
+	color: white;
+	font-family: helvetica;
+	font-weight: 100;
+	font-size: .9em;
+	font-style: italic;
+	cursor: pointer;
+	width: 16em;
+	padding: .5em;
+}
+
+span {
+	margin-right: .7em;
+	font-weight: 800;
+	font-size: 1.3em;
+}
+
 main {
 	display: flex;
 	flex-wrap: wrap;
@@ -5,6 +37,61 @@ main {
 	margin-top: 2em;
 }
 
+#all {
+	background: white;
+	width: 15em;
+	height: 22em;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	border-radius: .3em;
+	border-top-right-radius: 0em;
+	transition: all .5s;
+	box-shadow: 3px 3px 20px #888888;
+}
+
+#all:hover {
+	border-top-right-radius: 5em;
+	text-decoration: underline;
+}
+
+#all .ava:hover {
+	border-top-right-radius: 5em;
+}
+
+#all a {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+#all .ava {
+	transition: all .5s;
+	margin-bottom: 1.3em;
+	border-top-right-radius: 0em;
+}
+
+#all .gitlogo {
+	width: 2em;
+	height: 2em;
+}
+
+#all h2 {
+	font-family: helvetica;
+	margin: .4em;
+	color: #24292e;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+/* zoom */
+
+section {
+	font-family: helvetica;
+	display: none;
+}
 section div {
 	margin: 2em;
 }
@@ -13,17 +100,31 @@ section div img {
 	width: 25em;
 }
 
-main div {
-	width: 15em;
-	height: 25em;
-	margin-right: .3em;
-	margin-bottom: 2em;
-}
-
 main div img {
 	width: 15em;
+	height: 15em;
 }
 
-section {
-	display: none;
+section a {
+	color: #24292e;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.back {
+	align-self: center;
+	transition: all .2s;
+	margin-top: 1em;
+	border: 2px solid #24292e;
+	background: 0;
+	padding: .8em 2em .8em 2em;
+	width: 7em;
+	border-radius: .3em;
+	cursor: pointer;
+}
+
+.back:hover {
+	background: #24292e;
+	color: white;
+	border-color: #24292e;
 }

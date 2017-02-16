@@ -1,16 +1,16 @@
 const main = document.querySelector('main');
 const zoom = document.querySelector('section');
-const currentLocation = window.location;
+const nav = document.querySelector('nav p');
 const userArray = []; // all the user objects
+const currentLocation = window.location;
 currentLocation.hash = '#main';
 
 function mainDom(user) {
 	return `
-		<div>
+		<div id="all">
 			<a href="#${user.login}">
-				<img src="${user.avatar_url}"></img>
-				<h2>${user.name}</h2>
-				<p>${user.bio}</p>
+				<img class="ava" src="${user.avatar_url}"></img>
+				<img class="gitlogo" src="images/git.png"/><h2>${user.login}</h2>
 			</a>
 		</div>
 	`;
@@ -21,8 +21,13 @@ function zoomDom(user) {
 		<div>
 			<img src="${user.avatar_url}"></img>
 			<h1>${user.name}</h1>
+			<p>${user.bio}</p>
+			<p>${user.login}</p>
+			<p>${user.company}</p>
+			<a href="${user.html_url}">${user.html_url}</a>
+			<p>${user.public_repos}</p>
 		</div>
-		<a href="#main">Back</a>
+		<a class="back" href="#main">Back</a>
 	`;
 }
 
@@ -44,7 +49,7 @@ function infoRender() {
 
 function zoomRender() {
 	const getUserInfo = userArray
-		.filter(userInfo => '#' + userInfo.login === currentLocation.hash)
+		.filter(userInfo => `#${userInfo.login}` === currentLocation.hash)
 		.map(userInfo => zoomDom(userInfo))
 		.join('');
 
@@ -110,6 +115,12 @@ function toggle() {
 	}
 }
 
+function scrollToTop() {
+	currentLocation.hash = '#main';
+	window.scrollTo(0, this.offSetTop);
+}
+
 window.addEventListener('hashchange', infoRender);
 window.addEventListener('hashchange', zoomRender);
 window.addEventListener('hashchange', toggle);
+nav.addEventListener('click', scrollToTop);
