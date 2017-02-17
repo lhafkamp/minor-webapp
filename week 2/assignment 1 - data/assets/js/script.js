@@ -3,7 +3,7 @@ const zoom = document.querySelector('section');
 const nav = document.querySelector('nav p');
 const userArray = []; // all the user objects
 const currentLocation = window.location;
-currentLocation.hash = '#main';
+currentLocation.hash = '#main'; // startup location = #main
 
 function mainDom(user) {
 	return `
@@ -50,14 +50,15 @@ function renderToZoom(elements) {
 function infoRender() {
 	const getUserInfo = userArray
 		.map(userInfo => mainDom(userInfo)) // get html ele's
-		.join('');
+		.join(''); // joined all the data into one string and removed the ,'s. 
+		// could have used reduce but join is quicker
 
 	renderToMain(getUserInfo);
 }
 
 function zoomRender() {
 	const getUserInfo = userArray
-		.filter(userInfo => `#${userInfo.login}` === currentLocation.hash)
+		.filter(userInfo => `#${userInfo.login}` === currentLocation.hash) // only get the data from the user who matches with #
 		.map(userInfo => zoomDom(userInfo))
 		.join('');
 
@@ -114,7 +115,7 @@ function fetchData() {
 
 fetchData();
 
-function toggle() {
+function toggle() { // toggle between the main content and the zoom content
 	if (currentLocation.hash !== '#main') {
 		main.style.display = 'none';
 		zoom.style.display = 'block';
@@ -124,7 +125,7 @@ function toggle() {
 	}
 }
 
-function scrollToTop() {
+function scrollToTop() { // scroll to top/go back to #main when nav is clicked
 	currentLocation.hash = '#main';
 	window.scrollTo(0, this.offSetTop);
 }
