@@ -69,7 +69,8 @@ function fetchSingleUser(data) {
 		.then(data => data.json())
 		.then(data => userArray.push(data)) // push objects into userArray
 		.then(data => infoRender())
-		.then(data => zoomRender());
+		.then(data => zoomRender())
+		.catch(error => console.log(error)); 
 }
 
 function fetchData() {
