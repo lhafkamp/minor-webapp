@@ -130,9 +130,9 @@
 	}
 
 	// filter inputs based on account names
-	function searchUsers(input, userArray) {
+	function searchUsers(input, array) {
 		const regex = new RegExp(input, 'gi');
-		return userArray.filter(user => user.login.match(regex));
+		return array.filter(user => user.login.match(regex));
 	}
 
 	// output from the search input
