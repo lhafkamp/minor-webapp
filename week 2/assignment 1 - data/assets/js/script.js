@@ -2,12 +2,29 @@
 	const main = document.querySelector('main');
 	const zoom = document.querySelector('section');
 	const nav = document.querySelector('nav p');
+	const searchInput = document.querySelector('form input');
+	const suggestions = document.querySelector('main');
 	const userArray = []; // all the user objects
 	const currentLocation = window.location;
 	currentLocation.hash = '#main'; // startup location = #main
 
 	window.addEventListener('hashchange', infoRender);
 	window.addEventListener('hashchange', zoomRender);
+
+
+	function searchUsers(input, userArray) {
+		const regex = new RegExp(input, 'gi');
+		return userArray.filter(user => user.login.match(regex));
+	}
+
+	function searchResults() {
+		const outputArray = searchUsers(this.value, userArray);
+		const html = outputArray.map(output => mainDom(output)).join('');
+		suggestions.innerHTML = html;
+	}
+
+	searchInput.addEventListener('keyup', searchResults);
+
 
 	fetchData();
 
