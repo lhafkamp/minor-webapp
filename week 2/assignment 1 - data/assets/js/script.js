@@ -6,8 +6,10 @@
 	const currentLocation = window.location;
 	currentLocation.hash = '#main'; // startup location = #main
 
+	// start app
 	fetchData();
 
+	// get all users
 	function fetchData() {
 		const users = [
 		'https://api.github.com/users/lhafkamp', 
@@ -47,6 +49,7 @@
 		users.forEach(user => fetchSingleUser(user));
 	}
 
+	// fetch data
 	function fetchSingleUser(data) {
 		fetch(data)
 			.then(data => data.json())
@@ -56,6 +59,7 @@
 			.catch(error => console.log(error)); 
 	}
 
+	// renders the right data into the main page
 	function infoRender() {
 		const getUserInfo = userArray
 			.map(userInfo => mainDom(userInfo)) // get html ele's
@@ -65,6 +69,7 @@
 		renderToMain(getUserInfo);
 	}
 
+	// renders the right data into the zoom page
 	function zoomRender() {
 		const getUserInfo = userArray
 			.filter(userInfo => `#${userInfo.login}` === currentLocation.hash) // only get the data from the user who matches with #
@@ -77,14 +82,17 @@
 	window.addEventListener('hashchange', infoRender);
 	window.addEventListener('hashchange', zoomRender);
 
+	// render ele's to HTML
 	function renderToMain(elements) {
-		main.innerHTML = elements; // render ele's to HTML
+		main.innerHTML = elements;
 	}
 
+	// render ele's to HTML
 	function renderToZoom(elements) {
-		zoom.innerHTML = elements; // render ele's to HTML
+		zoom.innerHTML = elements;
 	}
 
+	// returns the main html as a template string
 	function mainDom(user) {
 		return `
 			<div id="all">
@@ -97,6 +105,7 @@
 		`;
 	}
 
+	// returns the zoom html as a template string
 	function zoomDom(user) {
 		return ` 
 			<div>
@@ -119,7 +128,8 @@
 		`;
 	}
 
-	function toggle() { // toggle between the main content and the zoom content
+	// toggle between the main content and the zoom content
+	function toggle() {
 		if (currentLocation.hash !== '#main') {
 			main.style.display = 'none';
 			zoom.style.display = 'block';
@@ -131,7 +141,8 @@
 
 	window.addEventListener('hashchange', toggle);
 
-	function scrollToTop() { // scroll to top/go back to #main when nav is clicked
+	// scroll to top/go back to #main when nav is clicked
+	function scrollToTop() {
 		currentLocation.hash = '#main';
 		window.scrollTo(0, this.offSetTop);
 	}
