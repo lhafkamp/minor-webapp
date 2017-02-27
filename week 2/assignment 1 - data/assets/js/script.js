@@ -55,13 +55,13 @@
 		fetch(data)
 			.then(data => data.json())
 			.then(data => userArray.push(data)) // push objects into userArray
-			.then(data => infoRender())
-			.then(data => zoomRender())
+			.then(data => mainData())
+			.then(data => zoomData())
 			.catch(error => console.log(error)); 
 	}
 
 	// renders the right data into the main page
-	function infoRender() {
+	function mainData() {
 		const getUserInfo = userArray
 			.map(userInfo => mainDom(userInfo)) // get html ele's
 			.join(''); // joined all the data into one string and removed the ,'s.
@@ -71,7 +71,7 @@
 	}
 
 	// renders the right data into the zoom page
-	function zoomRender() {
+	function zoomData() {
 		const getUserInfo = userArray
 			.filter(userInfo => `#${userInfo.login}` === currentLocation.hash) // only get the data from the user who matches with #
 			.map(userInfo => zoomDom(userInfo))
@@ -80,8 +80,8 @@
 		renderToZoom(getUserInfo);
 	}
 
-	window.addEventListener('hashchange', infoRender);
-	window.addEventListener('hashchange', zoomRender);
+	window.addEventListener('hashchange', mainData);
+	window.addEventListener('hashchange', zoomData);
 
 	// render ele's to HTML
 	function renderToMain(elements) {
