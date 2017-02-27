@@ -11,6 +11,7 @@ nav {
 	width: 100vw;
 	background: #24292e;
 	display: flex;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -18,20 +19,67 @@ nav p {
 	color: white;
 	font-family: helvetica;
 	font-weight: 100;
-	font-size: .9em;
+	font-size: 1em;
 	font-style: italic;
 	cursor: pointer;
 	width: 18em;
-	padding: .5em;
+	padding: .5em .5em .5em 2em;
 }
 
 nav span {
-	margin-right: .7em;
-	margin-left: .7em;
-
+	margin-right: .5em;
+	margin-left: .5em;
 	font-weight: 800;
 	font-size: 1.3em;
 }
+
+nav form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+nav input {
+	font-size: 1em;
+	padding: .8em .6em .6em .8em;
+	border: none;
+	width: 60vw;
+	border-radius: .1em;
+	background: #474747;
+	color: white;
+	margin-right: 2em;
+}
+
+nav input:focus {
+	outline: none;
+}
+
+nav img {
+	width: 1.6em;
+	margin-left: -4em;
+	margin-bottom: .1em;
+}
+
+@media (max-width: 60em) {
+	nav {
+		flex-direction: column;
+		padding-bottom: 2em;
+	}
+
+	body {
+		padding-top: 10em;
+	}
+
+	nav input {
+		margin-right: 0;
+	}
+
+	nav img {
+		margin-left: -2em;
+	}
+}
+
+
 
 main {
 	display: flex;
@@ -152,9 +200,21 @@ section span {
 	border-color: #24292e;
 }
 
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.showFlex {
+	display: flex;
+}
+
 @media (max-width: 30em) {
   	body {
-		padding: 5em 0em 2em 1.3em;
+		padding: 10em 0em 2em 1.3em;
   	}
 
   	section div img {

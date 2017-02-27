@@ -2,7 +2,7 @@
 	const main = document.querySelector('main');
 	const zoom = document.querySelector('section');
 	const nav = document.querySelector('nav p');
-	const searchInput = document.querySelector('form input');
+	const searchInput = document.querySelector('input');
 	const userArray = []; // all the user objects
 	const currentLocation = window.location;
 	currentLocation.hash = '#main'; // startup location = #main
@@ -147,11 +147,13 @@
 	// toggle between the main content and the zoom content
 	function toggle() {
 		if (currentLocation.hash !== '#main') {
-			main.style.display = 'none';
-			zoom.style.display = 'block';
+			main.classList.add('hide');
+			zoom.classList.add('show');
+			main.classList.remove('showFlex');
 		} else {
-			main.style.display = 'flex';
-			zoom.style.display = 'none';
+			zoom.classList.add('hide');
+			main.classList.add('showFlex');
+			zoom.classList.remove('show');
 		}
 	}
 
