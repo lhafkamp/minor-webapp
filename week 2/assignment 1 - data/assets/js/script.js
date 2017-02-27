@@ -57,7 +57,13 @@
 			.then(data => userArray.push(data)) // push objects into userArray
 			.then(data => mainData())
 			.then(data => zoomData())
-			.catch(error => console.log(error)); 
+			.then(something)
+			.catch(error => console.log(error));
+	}
+
+	function something() {
+		const bg = document.querySelector('div');
+		bg.classList.add('hide');
 	}
 
 	// renders the right data into the main page

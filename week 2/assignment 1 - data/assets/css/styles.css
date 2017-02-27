@@ -4,6 +4,12 @@ body {
 	padding: 6em 1.5em 2em 2.2em;
 }
 
+div {
+	background: red;
+	width: 100vw;
+	height: 100vh;
+}
+
 nav {
 	position: fixed;
 	top: 0;
