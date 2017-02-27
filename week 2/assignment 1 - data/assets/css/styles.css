@@ -1,7 +1,7 @@
 body {
 	background: #d8d8d8;
 	margin: 0;
-	padding: 5em 1.5em 2em 2.2em;
+	padding: 6em 1.5em 2em 2.2em;
 }
 
 nav {
@@ -11,6 +11,7 @@ nav {
 	width: 100vw;
 	background: #24292e;
 	display: flex;
+	height: 5em;
 	align-items: center;
 	justify-content: center;
 }
@@ -20,7 +21,6 @@ nav p {
 	font-family: helvetica;
 	font-weight: 100;
 	font-size: 1em;
-	font-style: italic;
 	cursor: pointer;
 	width: 18em;
 	padding: .5em .5em .5em 2em;
@@ -48,11 +48,13 @@ nav input {
 	background: #3F3F3F;
 	color: white;
 	margin-right: 2em;
+	font-style: italic;
 }
 
 nav input:focus {
 	outline: none;
 	background: #595959;
+	font-style: normal;
 }
 
 nav img {
