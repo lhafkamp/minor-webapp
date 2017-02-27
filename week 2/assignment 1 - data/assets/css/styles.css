@@ -45,13 +45,14 @@ nav input {
 	border: none;
 	width: 60vw;
 	border-radius: .1em;
-	background: #474747;
+	background: #3F3F3F;
 	color: white;
 	margin-right: 2em;
 }
 
 nav input:focus {
 	outline: none;
+	background: #595959;
 }
 
 nav img {
