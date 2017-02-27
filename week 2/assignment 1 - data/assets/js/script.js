@@ -136,10 +136,10 @@
 	}
 
 	// output from the search input
-	function searchResults() {
+	function searchResults(value) {
 		const outputArray = searchUsers(this.value, userArray);
-		const html = outputArray.map(output => mainDom(output)).join('');
-		main.innerHTML = html;
+		value = outputArray.map(output => mainDom(output)).join('');
+		renderToMain(value);
 	}
 
 	searchInput.addEventListener('keyup', searchResults);
