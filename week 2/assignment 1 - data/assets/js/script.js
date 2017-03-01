@@ -62,6 +62,7 @@
 			.catch(error => console.log(error));
 	}
 
+	// fade out loading screen once the data is loaded
 	function loadingComplete() {
 		loader.classList.add('smoothness');
 	}
