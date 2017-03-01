@@ -3,6 +3,7 @@
 	const zoom = document.querySelector('section');
 	const nav = document.querySelector('nav p');
 	const searchInput = document.querySelector('input');
+	const loader = document.querySelector('#loaderbox');
 	const userArray = []; // all the user objects
 	const currentLocation = window.location;
 	currentLocation.hash = '#main'; // startup location = #main
@@ -57,13 +58,12 @@
 			.then(data => userArray.push(data)) // push objects into userArray
 			.then(data => mainData())
 			.then(data => zoomData())
-			.then(something)
+			.then(loadingComplete)
 			.catch(error => console.log(error));
 	}
 
-	function something() {
-		const bg = document.querySelector('div');
-		bg.classList.add('hide');
+	function loadingComplete() {
+		loader.classList.add('smoothness');
 	}
 
 	// renders the right data into the main page

@@ -4,10 +4,48 @@ body {
 	padding: 6em 1.5em 2em 2.2em;
 }
 
-div {
-	background: red;
+#loaderbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity .8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: black;
 	width: 100vw;
 	height: 100vh;
+	z-index: 2000;
+}
+
+.smoothness {
+	animation: smooth 1.5s forwards;
+}
+
+@keyframes smooth {
+	0% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes loader {
+	to { 
+		background-position: -800px 0; 
+	}
+}
+
+.loader {
+	width: 6.25em; 
+	height: 6.25em;
+	background: url(http://dabblet.com/img/loader.png) 0 0;
+	animation: loader 1s infinite steps(8);
 }
 
 nav {
