@@ -1,14 +1,12 @@
-(function() {
+const story = (function() {
 	const main = document.querySelector('main');
 	const zoom = document.querySelector('section');
-	const nav = document.querySelector('nav p');
 	const searchInput = document.querySelector('input');
 	const loader = document.querySelector('#loaderbox');
 	const userArray = []; // all the user objects
 	const currentLocation = window.location;
-	currentLocation.hash = '#main'; // startup location = #main
 
-	// start app
+	// start story
 	fetchData();
 
 	// get all users
@@ -150,6 +148,14 @@
 	}
 
 	searchInput.addEventListener('keyup', searchResults);
+})();
+
+const page = (function() {
+	const main = document.querySelector('main');
+	const zoom = document.querySelector('section');
+	const nav = document.querySelector('nav p');
+	const currentLocation = window.location;
+	currentLocation.hash = '#main'; // startup location = #main
 
 	// toggle between the main content and the zoom content
 	function toggle() {
@@ -174,4 +180,3 @@
 
 	nav.addEventListener('click', scrollToTop);
 })();
-
