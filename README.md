@@ -7,7 +7,8 @@ https://lhafkamp.github.io/minor-webapp/week%202/assignment%201%20-%20data/#main
 You can click on any student to see more information about that student or use the searchbar to search for the student you had in mind.
 
 # Code Flow:
-<img src="week 2/assignment 1 - data/assets/images/diagram.png"></img>
+<img src="week 2/assignment 1 - data/assets/images/mainzoom.png"></img>
+<img src="week 2/assignment 1 - data/assets/images/filter.png"></img>
 
 # Interaction diagrams
 <img src="week 2/assignment 1 - data/assets/images/all.png"></img>
