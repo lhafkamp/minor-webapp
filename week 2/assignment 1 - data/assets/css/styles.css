@@ -188,7 +188,7 @@ main {
 
 section {
 	font-family: helvetica;
-	display: none;
+	display: block;
 }
 section div {
 	margin: 2em;

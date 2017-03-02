@@ -3,6 +3,7 @@ const story = (function() {
 	const zoom = document.querySelector('section');
 	const searchInput = document.querySelector('input');
 	const loader = document.querySelector('#loaderbox');
+	const github = 'https://api.github.com/users/';
 	const userArray = []; // all the user objects
 	const currentLocation = window.location;
 
@@ -11,42 +12,14 @@ const story = (function() {
 
 	// get all users
 	function fetchData() {
-		const users = [
-		'https://api.github.com/users/lhafkamp', 
-		'https://api.github.com/users/nickrttn',
-		'https://api.github.com/users/rijkvanzanten',
-		'https://api.github.com/users/camille500',
-		'https://api.github.com/users/IanCStewart',
-		'https://api.github.com/users/ChanelZM',
-		'https://api.github.com/users/TuriGuilano',
-		'https://api.github.com/users/Sidstumple',
-		'https://api.github.com/users/DanielDoelman',
-		'https://api.github.com/users/dandevri',
-		'https://api.github.com/users/DaveBitter',
-		'https://api.github.com/users/Djaygo',
-		'https://api.github.com/users/dylanvans',
-		'https://api.github.com/users/eltongonc',
-		'https://api.github.com/users/Frankwarnaar',
-		'https://api.github.com/users/GiuliaM',
-		'https://api.github.com/users/BerendPronk',
-		'https://api.github.com/users/larsdouweschuitema',
-		'https://api.github.com/users/Murderlon',
-		'https://api.github.com/users/Mimaaa',
-		'https://api.github.com/users/nooroel-imamdi',
-		'https://api.github.com/users/olli208',
-		'https://api.github.com/users/pierman1',
-		'https://api.github.com/users/rvdpas',
-		'https://api.github.com/users/royvanderzon',
-		'https://api.github.com/users/shyanta',
-		'https://api.github.com/users/ColinDorr',
-		'https://api.github.com/users/Sjoerdbeentjes',
-		'https://api.github.com/users/soraya2',
-		'https://api.github.com/users/SadisticSun',
-		'https://api.github.com/users/TimoVerkroost',
-		'https://api.github.com/users/Zishrodrigues',
-		'https://api.github.com/users/StijnHoeks',
-		];
-		users.forEach(user => fetchSingleUser(user));
+		const users = ['lhafkamp', 'nickrttn', 'rijkvanzanten', 'camille500',
+		'IanCStewart', 'ChanelZM', 'TuriGuilano', 'Sidstumple', 'DanielDoelman',
+		'dandevri', 'DaveBitter', 'Djaygo', 'dylanvans', 'eltongonc',
+		'Frankwarnaar', 'GiuliaM', 'BerendPronk', 'larsdouweschuitema',
+		'Murderlon', 'Mimaaa', 'nooroel-imamdi', 'olli208', 'pierman1',
+		'rvdpas', 'royvanderzon', 'shyanta', 'ColinDorr', 'Sjoerdbeentjes',
+		'soraya2', 'SadisticSun', 'TimoVerkroost', 'Zishrodrigues', 'StijnHoeks'];
+		users.forEach(user => fetchSingleUser(`${github}${user}`));
 	}
 
 	// fetch data
@@ -150,7 +123,7 @@ const story = (function() {
 	searchInput.addEventListener('keyup', searchResults);
 })();
 
-const page = (function() {
+const routing = (function() {
 	const main = document.querySelector('main');
 	const zoom = document.querySelector('section');
 	const nav = document.querySelector('nav p');
