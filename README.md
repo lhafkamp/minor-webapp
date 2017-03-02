@@ -7,7 +7,7 @@ https://lhafkamp.github.io/minor-webapp/week%202/assignment%201%20-%20data/#main
 You can click on any student to see more information about that student or use the searchbar to search for the student you had in mind.
 
 **Adding new users:**<br>
-To add a new Github user to the app open the javascript file which you can find here:
+To add a new Github user to the app open the javascript file which you can find here:<br>
 https://github.com/lhafkamp/minor-webapp/blob/master/week%202/assignment%201%20-%20data/assets/js/script.js
 
 In the javascript file, simply add a new string in the *users* array and make sure the string matches the name of the Github you want to add:
