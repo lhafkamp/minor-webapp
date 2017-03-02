@@ -10,8 +10,8 @@ You can click on any student to see more information about that student or use t
 <img src="week 2/assignment 1 - data/assets/images/diagram.png"></img>
 
 # Interaction diagrams
-<img src="week 2/assignment 1 - data/assets/images/main.png.png"></img>
-<img src="week 2/assignment 1 - data/assets/images/zoom.png.png"></img>
+<img src="week 2/assignment 1 - data/assets/images/main.png"></img>
+<img src="week 2/assignment 1 - data/assets/images/zoom.png"></img>
 <img src="week 2/assignment 1 - data/assets/images/searchfunction.png"></img>
 
 # Resources:
