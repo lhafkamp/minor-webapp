@@ -6,21 +6,27 @@ https://lhafkamp.github.io/minor-webapp/week%202/assignment%201%20-%20data/#main
 
 You can click on any student to see more information about that student or use the searchbar to search for the student you had in mind.
 
-# Code Flow:
+To add a new Github user to the app simply add a new string in the users array and make sure it matches the name of its Github page:
+```javascript
+const users = ['someuser', 'someuser', 'addNewUserHere']
+alert(s);
+```
+
+## Code Flow:
 <img src="week 2/assignment 1 - data/assets/images/diagram.png"></img>
 
-# Interaction diagrams
+## Interaction diagrams
 <img src="week 2/assignment 1 - data/assets/images/main.png"></img>
 <img src="week 2/assignment 1 - data/assets/images/zoom.png"></img>
 <img src="week 2/assignment 1 - data/assets/images/searchfunction.png"></img>
 
-# Resources:
+## Resources:
 The data from each student is fetched from api.github.com
 
-# Wishlist:
+## Wishlist:
 Currently I'm only using the features that are available from the Github API without oauth2. If I would use oauth2 I would expand the user pages by showing what repositories they've been working on lately.
 
-# Links:
+## Links:
 Javascript:
 https://github.com/lhafkamp/minor-webapp/blob/master/week%202/assignment%201%20-%20data/assets/js/script.js
 
