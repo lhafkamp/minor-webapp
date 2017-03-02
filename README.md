@@ -33,5 +33,5 @@ Currently I'm only using the features that are available from the Github API wit
 Javascript:
 https://github.com/lhafkamp/minor-webapp/blob/master/week%202/assignment%201%20-%20data/assets/js/script.js
 
-Github pages:
+App:
 https://lhafkamp.github.io/minor-webapp/week%202/assignment%201%20-%20data/#main
